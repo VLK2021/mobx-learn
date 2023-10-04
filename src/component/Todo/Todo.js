@@ -7,6 +7,7 @@ import todo from '../../store/todo';
 const Todo = () => {
     return (
         <div>
+            <button onClick={() => todo.fetchTodos()}>add todo</button>
             {
                 todo.todos.map(t =>
                     <div className={'todo'} key={t.id}>

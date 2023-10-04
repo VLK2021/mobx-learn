@@ -24,6 +24,14 @@ class Todo {
         this.todos = this.todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo)
     }
 
+    fetchTodos() {
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json =>
+            this.todos = [...this.todos, ...json]
+            )
+    }
+
 }
 
 export default new Todo();
